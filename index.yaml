@@ -3,9 +3,9 @@ entries:
   docker-registry-mirror:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2020-12-16T04:53:19.691723376Z"
+    created: "2021-01-20T11:59:52.003825914Z"
     description: A Helm chart for Docker Registry Mirror
-    digest: e0feecbaf8c006189d8ee3b948bde34862576b0dde7023e6e5ef5b446d2bba4b
+    digest: d85d62f2957aee559f9bcf278a34c3115e9548e2b36fca14125250f3b73123ed
     home: https://github.com/t83714/docker-registry-mirror
     name: docker-registry-mirror
     sources:
@@ -25,4 +25,4 @@ entries:
     urls:
     - https://t83714.github.io/docker-registry-mirror/charts/docker-registry-mirror-1.10.1.tgz
     version: 1.10.1
-generated: "2020-12-16T04:53:19.690584546Z"
+generated: "2021-01-20T11:59:52.002540815Z"
