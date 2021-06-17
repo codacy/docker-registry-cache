@@ -1,8 +1,0 @@
-apiVersion: v1
-description: A Helm chart for Docker Registry Mirror
-name: docker-registry-mirror
-version: 1.10.3
-appVersion: 2.7.1
-home: https://github.com/t83714/docker-registry-mirror
-sources:
-- https://github.com/t83714/docker-registry-mirror

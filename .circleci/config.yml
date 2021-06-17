@@ -1,0 +1,36 @@
+version: 2.1
+
+orbs:
+  codacy: codacy/base@5.0.4
+
+workflows:
+  compile_test_deploy:
+    jobs:
+      - codacy/checkout_and_version
+
+      - codacy/helm_aws:
+          name: helm_lint
+          cmd: helm lint .helm/docker-registry-cache
+          requires:
+            - codacy/checkout_and_version
+
+
+      - codacy/tag_version:
+          name: tag_version_dev
+          context: CodacyAWS
+          requires:
+            - helm_lint
+          filters:
+            branches:
+              only:
+                - master
+
+      # publish chart
+      - codacy/helm_push:
+          name: helm_push_external
+          context: CodacyHelm
+          chart_name: docker-registry-cache
+          charts_repo_url: "https://charts.codacy.com/external"
+          push_options: --force
+          requires:
+            - tag_version_dev
