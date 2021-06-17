@@ -24,6 +24,7 @@ workflows:
             branches:
               only:
                 - master
+                - feature/setup-ci-cd
 
       # publish chart
       - codacy/helm_push:
